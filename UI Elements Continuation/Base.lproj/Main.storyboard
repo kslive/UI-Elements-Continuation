@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,47 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UI_Elements_Continuation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rRr-Ee-7Rx">
+                                <rect key="frame" x="10" y="344" width="394" height="368"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Продолжение работы с UIKit. Работа с элементами пользовательского интерфейса. Простое приложение, в котором задействованы основные элементы UIKit. Продолжение работы с UIKit. Работа с элементами пользовательского интерфейса. Простое приложение, в котором задействованы основные элементы UIKit. Продолжение работы с UIKit. Работа с элементами пользовательского интерфейса. Простое приложение, в котором задействованы основные элементы UIKit. Продолжение работы с UIKit. Работа с элементами пользовательского интерфейса. Простое приложение, в котором задействованы основные элементы UIKit. Продолжение работы с UIKit. Работа с элементами пользовательского интерфейса. Простое приложение, в котором задействованы основные элементы UIKit. Продолжение работы с UIKit. Работа с элементами пользовательского интерфейса. Простое приложение, в котором задействованы основные элементы UIKit. Продолжение работы с UIKit. Работа с элементами пользовательского интерфейса. Простое приложение, в котором задействованы основные элементы UIKit.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icl-dP-MYR">
+                                <rect key="frame" x="20" y="44" width="10.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="icl-dP-MYR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GmX-AJ-kZW"/>
+                            <constraint firstItem="icl-dP-MYR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Hca-33-gVu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="icl-dP-MYR" secondAttribute="trailing" symbolic="YES" id="IY6-a2-xe2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rRr-Ee-7Rx" secondAttribute="bottom" constant="150" id="J3o-Cf-vAv"/>
+                            <constraint firstItem="rRr-Ee-7Rx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QaF-KG-03G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rRr-Ee-7Rx" secondAttribute="trailing" constant="10" id="cOQ-b6-HQO"/>
+                            <constraint firstItem="rRr-Ee-7Rx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="rO7-YW-jBn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="J3o-Cf-vAv" id="0dz-Xl-qTF"/>
+                        <outlet property="countLabel" destination="icl-dP-MYR" id="LnB-MA-rJT"/>
+                        <outlet property="textView" destination="rRr-Ee-7Rx" id="JVA-6F-rhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="118"/>
         </scene>
     </scenes>
 </document>
