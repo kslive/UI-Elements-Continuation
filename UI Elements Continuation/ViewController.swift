@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
         textView.isHidden = true
-        textView.alpha = 0
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 17)
         textView.backgroundColor = self.view.backgroundColor
@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         activityIndicator.color = #colorLiteral(red: 0.3098039329, green: 0.2039215714, blue: 0.03921568766, alpha: 1)
         activityIndicator.startAnimating()
         
+        progressView.setProgress(0, animated: true)
+        
         NotificationCenter.default.addObserver(self,
                                        selector: #selector(updateTextView(notification:)),
                                        name: UIResponder.keyboardWillChangeFrameNotification,
@@ -47,14 +49,14 @@ class ViewController: UIViewController {
                                        name: UIResponder.keyboardWillHideNotification,
                                        object: nil)
         
-        UIView.animateKeyframes(withDuration: 0,
-                                delay: 3,
-                                options: .autoreverse,
-                                animations: {
-                                    self.textView.alpha = 1
-        }) { (finished) in
-            self.activityIndicator.stopAnimating()
-            self.textView.isHidden = false
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
+            if self.progressView.progress != 1 {
+                self.progressView.progress += 0.2
+            } else {
+                self.activityIndicator.stopAnimating()
+                self.textView.isHidden = false
+                self.progressView.isHidden = true
+            }
         }
     }
 

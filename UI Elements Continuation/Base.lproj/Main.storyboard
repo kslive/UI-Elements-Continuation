@@ -38,10 +38,14 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uTm-Ce-PI4">
                                 <rect key="frame" x="197" y="518" width="20" height="20"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="89g-EY-8hJ">
+                                <rect key="frame" x="10" y="344" width="394" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rRr-Ee-7Rx" firstAttribute="top" secondItem="mFF-2q-aRB" secondAttribute="bottom" constant="10" id="3Ic-em-PY7"/>
+                            <constraint firstItem="89g-EY-8hJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="6nh-YR-1dc"/>
                             <constraint firstItem="uTm-Ce-PI4" firstAttribute="top" secondItem="rRr-Ee-7Rx" secondAttribute="bottom" constant="-194" id="8D4-Il-9Wv"/>
                             <constraint firstItem="uTm-Ce-PI4" firstAttribute="leading" secondItem="rRr-Ee-7Rx" secondAttribute="trailing" constant="-207" id="E79-kj-7dI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="icl-dP-MYR" secondAttribute="trailing" symbolic="YES" id="IY6-a2-xe2"/>
@@ -51,7 +55,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rRr-Ee-7Rx" secondAttribute="trailing" constant="10" id="cOQ-b6-HQO"/>
                             <constraint firstItem="icl-dP-MYR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eHp-dL-E8V"/>
                             <constraint firstItem="rRr-Ee-7Rx" firstAttribute="top" secondItem="icl-dP-MYR" secondAttribute="bottom" constant="15" id="j79-QQ-VWV"/>
+                            <constraint firstItem="89g-EY-8hJ" firstAttribute="top" secondItem="mFF-2q-aRB" secondAttribute="bottom" constant="10" id="oqB-WE-BI0"/>
                             <constraint firstItem="rRr-Ee-7Rx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="rO7-YW-jBn"/>
+                            <constraint firstAttribute="trailing" secondItem="89g-EY-8hJ" secondAttribute="trailing" constant="10" id="tPv-bu-y8h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -59,13 +65,14 @@
                         <outlet property="activityIndicator" destination="uTm-Ce-PI4" id="isC-6s-9dD"/>
                         <outlet property="bottomConstraint" destination="J3o-Cf-vAv" id="0dz-Xl-qTF"/>
                         <outlet property="countLabel" destination="icl-dP-MYR" id="LnB-MA-rJT"/>
+                        <outlet property="progressView" destination="89g-EY-8hJ" id="Vpd-Gj-9dr"/>
                         <outlet property="stepper" destination="mFF-2q-aRB" id="HOt-Lx-vRd"/>
                         <outlet property="textView" destination="rRr-Ee-7Rx" id="JVA-6F-rhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="118"/>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
     </scenes>
 </document>
