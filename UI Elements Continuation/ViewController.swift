@@ -13,17 +13,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stepper: UIStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
-        
         textView.text = ""
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 17)
         textView.backgroundColor = self.view.backgroundColor
         textView.layer.cornerRadius = 10
+        
+        stepper.value = 17
+        stepper.minimumValue = 10
+        stepper.maximumValue = 25
+        stepper.layer.cornerRadius = 5
+        stepper.tintColor = .white
         
         NotificationCenter.default.addObserver(self,
                                        selector: #selector(updateTextView(notification:)),
@@ -40,7 +46,6 @@ class ViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         
         self.view.endEditing(true)
-        
     }
     
     @objc func updateTextView(notification: Notification) {
@@ -59,13 +64,18 @@ class ViewController: UIViewController {
             
             textView.scrollRangeToVisible(textView.selectedRange)
         }
-        
     }
-
+    
+    @IBAction func sizeFont(_ sender: UIStepper) {
+        let font = textView.font?.fontName
+        let fontSize = CGFloat(sender.value)
+        
+        textView.font = UIFont.init(name: font!, size: fontSize)
+    }
+    
 }
 
 extension ViewController: UITextViewDelegate {
-    
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.backgroundColor = .white
         textView.textColor = .darkGray
