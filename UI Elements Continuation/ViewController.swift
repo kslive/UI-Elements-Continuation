@@ -14,12 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
-        textView.text = ""
+        textView.isHidden = true
+        textView.alpha = 0
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Light", size: 17)
         textView.backgroundColor = self.view.backgroundColor
@@ -31,6 +33,10 @@ class ViewController: UIViewController {
         stepper.layer.cornerRadius = 5
         stepper.tintColor = .white
         
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = #colorLiteral(red: 0.3098039329, green: 0.2039215714, blue: 0.03921568766, alpha: 1)
+        activityIndicator.startAnimating()
+        
         NotificationCenter.default.addObserver(self,
                                        selector: #selector(updateTextView(notification:)),
                                        name: UIResponder.keyboardWillChangeFrameNotification,
@@ -40,6 +46,16 @@ class ViewController: UIViewController {
                                        selector: #selector(updateTextView(notification:)),
                                        name: UIResponder.keyboardWillHideNotification,
                                        object: nil)
+        
+        UIView.animateKeyframes(withDuration: 0,
+                                delay: 3,
+                                options: .autoreverse,
+                                animations: {
+                                    self.textView.alpha = 1
+        }) { (finished) in
+            self.activityIndicator.stopAnimating()
+            self.textView.isHidden = false
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

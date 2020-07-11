@@ -23,22 +23,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mFF-2q-aRB">
-                                <rect key="frame" x="310" y="302" width="94" height="32"/>
-                                <connections>
-                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ke5-5S-zGQ"/>
-                                </connections>
-                            </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icl-dP-MYR">
                                 <rect key="frame" x="10" y="308" width="10.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mFF-2q-aRB">
+                                <rect key="frame" x="310" y="302" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ke5-5S-zGQ"/>
+                                </connections>
+                            </stepper>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uTm-Ce-PI4">
+                                <rect key="frame" x="197" y="518" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rRr-Ee-7Rx" firstAttribute="top" secondItem="mFF-2q-aRB" secondAttribute="bottom" constant="10" id="3Ic-em-PY7"/>
+                            <constraint firstItem="uTm-Ce-PI4" firstAttribute="top" secondItem="rRr-Ee-7Rx" secondAttribute="bottom" constant="-194" id="8D4-Il-9Wv"/>
+                            <constraint firstItem="uTm-Ce-PI4" firstAttribute="leading" secondItem="rRr-Ee-7Rx" secondAttribute="trailing" constant="-207" id="E79-kj-7dI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="icl-dP-MYR" secondAttribute="trailing" symbolic="YES" id="IY6-a2-xe2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rRr-Ee-7Rx" secondAttribute="bottom" constant="150" id="J3o-Cf-vAv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mFF-2q-aRB" secondAttribute="trailing" constant="10" id="OOn-0H-CrM"/>
@@ -51,6 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="uTm-Ce-PI4" id="isC-6s-9dD"/>
                         <outlet property="bottomConstraint" destination="J3o-Cf-vAv" id="0dz-Xl-qTF"/>
                         <outlet property="countLabel" destination="icl-dP-MYR" id="LnB-MA-rJT"/>
                         <outlet property="stepper" destination="mFF-2q-aRB" id="HOt-Lx-vRd"/>
